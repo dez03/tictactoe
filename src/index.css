@@ -1,13 +1,113 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  overflow: hidden;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.game-container {
+  min-height: 100vh;
+  height: 100vh; /* Fixed height */
+  background: linear-gradient(to bottom, #111827, #1f2937);
+  padding: 2rem;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.game-content {
+  max-width: 64rem;
+  margin: 0 auto;
+}
+
+.game-layout {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .game-layout {
+    flex-direction: row;
+    justify-content: center;
+  }
+}
+
+.game-board-container, .game-history {
+  background: rgba(31, 41, 55, 0.5);
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  backdrop-filter: blur(8px);
+}
+
+.game-title {
+  font-size: 2.25rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 2rem;
+  background: linear-gradient(to right, #3b82f6, #8b5cf6, #ec4899);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.game-status {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  color: white;
+}
+
+.game-square {
+  width: 4rem;
+  height: 4rem;
+  background: #1f2937;
+  border: 1px solid #4b5563;
+  border-radius: 0.5rem;
+  margin: 0.25rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+  transition: background-color 0.2s;
+}
+
+.game-square:hover {
+  background: #374151;
+}
+
+.history-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: white;
+}
+
+.history-item {
+  margin-bottom: 0.5rem;
+}
+
+.history-button {
+  padding: 0.5rem 1rem;
+  background: #374151;
+  color: white;
+  border: none;
+  border-radius: 0.25rem;
+  transition: background-color 0.2s;
+}
+
+.history-button:hover {
+  background: #4b5563;
+}
+
+.board-container {
+  display: flex;
+  justify-content: center;
+}
+
+.board {
+  display: inline-block;
+}
+
+.board-row {
+  display: flex;
 }
